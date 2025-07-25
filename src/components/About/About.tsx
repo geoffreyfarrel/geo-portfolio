@@ -1,15 +1,54 @@
+import { useRef } from 'react';
 import TechLogo from '../ui/TechLogo';
+import useAbout from './useAbout';
+import { Card, CardBody } from '@heroui/react';
 
 const About = () => {
+  const aboutRef = useRef<HTMLElement | null>(null);
+  useAbout(aboutRef);
+
   return (
-    <div>
-      <h2 className="mb-4 text-xl">
-        My name is Geoffrey Farrel. I am a full-stack web developer. I am a JS
-        fan boy so my tech stack is JS related.
-      </h2>
-      <h1 className="mb-2 text-4xl font-semibold">Tech Stack: </h1>
-      <TechLogo />
-    </div>
+    <section
+      ref={aboutRef}
+      className="flex items-center justify-center bg-blue-100 py-10 lg:px-32"
+    >
+      <div className="flex w-full flex-col items-center justify-between gap-4 md:p-6 lg:p-8">
+        <Card className="desc1 w-3/4 text-right">
+          <CardBody className="p-4 md:p-8">
+            <p className="text-justify text-sm md:text-xl">
+              Hi, I'm <strong>Geoffrey Farrel</strong>, a full-stack web
+              developer mainly focusing on Javascript technologies. I love to
+              build clean, interactive, and scalable web applications using
+              modern frameworks like React, Next.js, and Express.js.
+            </p>
+          </CardBody>
+        </Card>
+        <Card className="desc2 w-3/4 text-right">
+          <CardBody className="p-4 md:p-8">
+            <p className="text-justify text-sm md:text-xl">
+              I'm particularly drawn to Javascript's flexibility in building
+              both frontend and backend. Whether it's creating responsive UI,
+              builing APIs, or integrating to databases
+            </p>
+          </CardBody>
+        </Card>
+        <Card className="desc3 w-3/4 text-right">
+          <CardBody className="p-4 md:p-8">
+            <p className="text-justify text-sm md:text-xl">
+              I keep learning, exploring new tools and skils in web development.
+              Currently, I'm working on projects that sharpen my skills and
+              challenge my creativity.
+            </p>
+          </CardBody>
+        </Card>
+        <div className="">
+          <h1 className="mb-2 text-2xl font-semibold md:text-4xl">
+            Tech Stack:
+          </h1>
+          <TechLogo />
+        </div>
+      </div>
+    </section>
   );
 };
 

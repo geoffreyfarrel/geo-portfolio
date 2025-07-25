@@ -5,14 +5,15 @@ import About from '../About';
 const Home = () => {
   const { done } = useHeroDone();
   return (
-    <>
+    <div className="scroller">
       <Hero />
       {done && (
-        <div className="h-screen w-full p-10 lg:px-32">
+        <div className="w-full">
           <About />
+          <section></section>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

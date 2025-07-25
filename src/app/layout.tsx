@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { HeroProvider } from '@/contexts/HeroContext';
+import { HeroUIProvider } from '@heroui/react';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -23,9 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-hidden antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <HeroProvider>
-          <main className="scrollbar-hide flex h-screen flex-col items-center overflow-y-scroll scroll-smooth">
+          <main className="flex flex-col items-center scroll-smooth">
             {children}
           </main>
         </HeroProvider>

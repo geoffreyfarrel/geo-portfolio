@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn';
 
 const TechLogo = () => {
   return (
-    <div className="flex w-fit flex-row gap-3 rounded-xl bg-slate-700 p-3">
+    <div className="grid w-fit grid-cols-5 justify-start gap-3 rounded-xl bg-slate-700 p-3 sm:grid-cols-8 md:grid-cols-11">
       {TECH_LOGO_ICON.map((item) => (
         <Image
           key={item.key}
@@ -12,7 +12,7 @@ const TechLogo = () => {
           alt={item.key}
           width={item.width}
           height={item.height}
-          className="rounded-lg"
+          className="w-[50px] self-center rounded-lg"
         />
       ))}
     </div>

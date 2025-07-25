@@ -2,11 +2,10 @@ import { useHeroDone } from '@/contexts/HeroContext';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrambleTextPlugin from 'gsap/ScrambleTextPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
-import { RefObject, useContext } from 'react';
+import { RefObject } from 'react';
 
-gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin);
+gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
 const useHero = (ref: RefObject<HTMLElement | null>) => {
   const { setDone } = useHeroDone();
@@ -54,23 +53,31 @@ const useHero = (ref: RefObject<HTMLElement | null>) => {
         }
       );
 
-      new SplitText('.heroheading', {
-        type: 'chars',
+      const split = new SplitText('.heroheading', {
+        type: 'words, chars',
+        wordsClass: 'word',
         charsClass: 'char',
       });
 
-      tl.from('.heroheading .char', {
+      gsap.set('.word', {
+        display: 'inline',
+        whiteSpace: 'normal',
+      });
+      gsap.set('.char', {
+        display: 'inline',
+      });
+
+      tl.from(split.chars, {
         opacity: 0,
-        duration: 0.3,
         stagger: 0.05,
         scrambleText: {
           text: 'x',
           chars: 'lowerCase',
           speed: 1,
-          delimiter: ' ',
+          delimiter: '',
           tweenLength: true,
         },
-        ease: 'expo',
+        ease: 'expo.out',
       });
 
       tl.to({}, { duration: 0.45 });
