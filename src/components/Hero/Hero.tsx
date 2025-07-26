@@ -11,7 +11,7 @@ const Hero = () => {
       ref={heroRef}
       className="grid grid-cols-1 gap-4 bg-blue-800 p-10 lg:grid-cols-2 lg:flex-row lg:justify-between lg:px-32"
     >
-      <div className="flex w-full flex-col justify-center gap-4 text-center lg:items-start lg:justify-end lg:py-10">
+      <div className="flex w-full flex-col justify-end gap-4 text-center lg:items-start lg:py-10">
         <h1 className="heroheading text-center text-3xl font-extrabold text-white md:text-5xl lg:text-left lg:text-6xl">
           Hi, I am Geoffrey !
         </h1>
@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
       </div>
       <div className="profile flex w-full items-center justify-center py-10 lg:mx-5">
-        <div className="relative aspect-[3/4] w-[400px] bg-white">
+        <div className="relative aspect-[3/4] min-w-[338px] bg-white">
           <Image
             src="/img/profile-white.webp"
             alt="profile"

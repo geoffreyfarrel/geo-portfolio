@@ -60,7 +60,7 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
             start: 'bottom 100%',
             end: 'top 30%',
             scrub: true,
-            markers: true,
+            markers: false,
           },
         }
       );
@@ -86,10 +86,51 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
             start: 'bottom 100%',
             end: 'top 30%',
             scrub: true,
-            markers: true,
+            markers: false,
           },
         }
       );
+
+      const wrapper = '.tech-logos';
+      const logos = '.tech-logo';
+
+      const techTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: wrapper,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+          markers: true,
+        },
+      });
+
+      gsap.set(logos, {
+        scale: 0,
+        opacity: 0,
+      });
+
+      techTimeline
+
+        .to(wrapper, {
+          width: 'auto',
+          duration: 0.5,
+          ease: 'power2.out',
+        })
+        .to(wrapper, {
+          height: 'auto',
+          duration: 0.5,
+          ease: 'power2.out',
+        })
+        .to(
+          logos,
+          {
+            opacity: 1,
+            scale: 1,
+            stagger: 0.1,
+            ease: 'back.out(1.7)',
+            duration: 0.3,
+          },
+          '+=0.1'
+        );
     },
     { scope: ref }
   );
