@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Imperial_Script, Inter } from 'next/font/google';
 import './globals.css';
 import { HeroProvider } from '@/contexts/HeroContext';
-import { HeroUIProvider } from '@heroui/react';
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+});
+
+const imperialScript = Imperial_Script({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-imperial',
 });
 
 export const metadata: Metadata = {
@@ -24,9 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.variable} ${imperialScript.variable} antialiased`}
+      >
         <HeroProvider>
-          <main className="flex flex-col items-center scroll-smooth">
+          <main className="flex flex-col items-center scroll-smooth font-sans">
             {children}
           </main>
         </HeroProvider>

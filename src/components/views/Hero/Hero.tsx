@@ -20,12 +20,13 @@ const Hero = () => {
         </p>
       </div>
       <div className="profile flex w-full items-center justify-center py-10 lg:mx-5">
-        <div className="relative aspect-[3/4] min-w-[338px] bg-white">
+        <div className="relative aspect-[3/4] min-w-[338px] rounded-3xl bg-white">
           <Image
             src="/img/profile-white.webp"
             alt="profile"
             fill
-            className="object-cover"
+            className="rounded-3xl object-cover"
+            priority
           />
         </div>
       </div>

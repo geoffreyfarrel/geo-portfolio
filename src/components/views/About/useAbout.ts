@@ -31,8 +31,8 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: ref.current,
-            start: 'top 100%',
-            end: 'top 30%',
+            start: 'top 70%',
+            end: 'top 10%',
             scrub: true,
             markers: false,
           },
@@ -97,9 +97,9 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
       const techTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: wrapper,
-          start: 'top 90%',
+          start: 'top 100%',
           toggleActions: 'play none none none',
-          markers: true,
+          markers: false,
         },
       });
 
@@ -109,7 +109,6 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
       });
 
       techTimeline
-
         .to(wrapper, {
           width: 'auto',
           duration: 0.5,
