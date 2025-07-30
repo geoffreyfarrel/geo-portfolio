@@ -14,6 +14,7 @@ const HomePage = () => {
         <div className="w-full">
           <About />
           <Projects />
+          <section></section>
         </div>
       )}
     </div>

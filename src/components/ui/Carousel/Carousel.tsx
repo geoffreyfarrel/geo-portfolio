@@ -25,7 +25,7 @@ const Carousel = () => {
         slideShadows: true,
       }}
       navigation={true}
-      className="w-full max-w-5xl py-10"
+      className=""
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
     >
       {CAROUSEL_CONSTANTS.map((card, index) => (

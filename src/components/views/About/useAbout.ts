@@ -84,7 +84,7 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
           scrollTrigger: {
             trigger: '.desc2',
             start: 'bottom 100%',
-            end: 'top 30%',
+            end: 'top 50%',
             scrub: true,
             markers: false,
           },
