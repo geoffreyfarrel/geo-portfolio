@@ -14,9 +14,7 @@ const About = () => {
     >
       <div className="flex w-full flex-col items-center justify-between gap-4 p-6 lg:p-8">
         <div className="mb-6 flex flex-col items-center">
-          <h1 className="mb-2 text-2xl font-semibold md:text-4xl">
-            Tech Stack
-          </h1>
+          <h1 className="mb-2 text-2xl font-bold md:text-5xl">Tech Stack</h1>
           <TechLogo />
         </div>
         <Card className="desc1 h-auto w-auto bg-amber-50 text-right">

@@ -1,6 +1,8 @@
 'use client';
 
 import About from '@/components/views/About';
+import Certificates from '@/components/views/Certificates';
+import Footer from '@/components/views/Footer';
 import Hero from '@/components/views/Hero';
 import Projects from '@/components/views/Projects';
 import { useHeroDone } from '@/contexts/HeroContext';
@@ -14,7 +16,8 @@ const HomePage = () => {
         <div className="w-full">
           <About />
           <Projects />
-          <section></section>
+          <Certificates />
+          <Footer />
         </div>
       )}
     </div>

@@ -111,6 +111,18 @@ const useHero = (ref: RefObject<HTMLElement | null>) => {
           ease: 'power3.out',
         });
       });
+
+      tl.fromTo(
+        '.brand',
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power3.out',
+        }
+      );
     },
     { scope: ref }
   );
