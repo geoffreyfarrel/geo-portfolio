@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import useHero from './useHero';
 import Image from 'next/image';
+import { FaGithub } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import Link from 'next/link';
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement | null>(null);
   useHero(heroRef);
-
   return (
     <section
       ref={heroRef}
@@ -19,8 +21,8 @@ const Hero = () => {
           A Full-stack Web Developer
         </p>
       </div>
-      <div className="profile flex w-full items-center justify-center py-10 lg:mx-5">
-        <div className="relative aspect-[3/4] min-w-[338px] rounded-3xl bg-white">
+      <div className="profile flex w-full flex-col items-center justify-center py-10 lg:mx-5">
+        <div className="relative mb-4 aspect-[3/4] min-w-[248px] rounded-3xl bg-white md:min-w-[300px] lg:min-w-[338px]">
           <Image
             src="/img/profile-white.webp"
             alt="profile"
@@ -28,6 +30,23 @@ const Hero = () => {
             className="rounded-3xl object-cover"
             priority
           />
+        </div>
+        <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
+          <Link
+            href={'https://github.com/geoffreyfarrel'}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex items-center gap-2"
+          >
+            <FaGithub className="text-2xl text-white" />
+            <p className="text-lg font-bold text-white">geoffreyfarrel</p>
+          </Link>
+          <div className="flex items-center gap-2">
+            <MdEmail className="text-2xl text-white" />
+            <p className="text-lg font-bold text-white">
+              geoffreyfarrel@gmail.com
+            </p>
+          </div>
         </div>
       </div>
     </section>
