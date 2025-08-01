@@ -1,10 +1,18 @@
 import CertificateCard from '@/components/ui/CertificateCard';
 import CERTIFICATE_CARD_CONSTANTS from '@/components/ui/CertificateCard/CertificateCard.constants';
 import { Card, CardBody } from '@heroui/react';
+import Image from 'next/image';
 
 const Certificates = () => {
   return (
-    <section className="flex !h-auto flex-col justify-center gap-8 bg-emerald-800 px-10 py-10 lg:px-32">
+    <section className="relative flex !h-auto flex-col justify-center gap-8 overflow-hidden bg-emerald-800 px-10 py-10 lg:px-32">
+      <Image
+        src={'/img/medal.svg'}
+        alt="medal-background"
+        width={700}
+        height={700}
+        className="pointer-events-none absolute -top-20 -right-90 w-[1100px] opacity-20 invert select-none"
+      />
       <h1 className="mb-2 text-center text-8xl font-extrabold text-white">
         Certificates
       </h1>
