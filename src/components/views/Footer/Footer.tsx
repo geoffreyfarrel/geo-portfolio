@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="mb-2 text-white">
         <div className="flex flex-row items-center gap-2 text-lg font-bold">
           <MdMail />
-          <p>geoffreyfarre67@gmail.com</p>
+          <p>geoffreyfarrel67@gmail.com</p>
         </div>
       </div>
       <div className="flex w-full flex-row justify-between">
