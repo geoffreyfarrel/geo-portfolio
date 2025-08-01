@@ -9,6 +9,7 @@ import { useHeroDone } from '@/contexts/HeroContext';
 
 const HomePage = () => {
   const { done } = useHeroDone();
+
   return (
     <div className="flex w-full flex-col">
       <Hero />

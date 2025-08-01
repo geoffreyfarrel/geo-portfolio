@@ -1,15 +1,18 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import js from '@eslint/js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
 });
 
 export default [
+  { ignores: ['src/utils/gsap-horizontal-loop.js'] },
   // Base config
   ...compat.extends(
     'eslint:recommended',
@@ -17,7 +20,9 @@ export default [
     'plugin:react-hooks/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
+    'next',
+    'next/core-web-vitals'
   ),
 
   // Main rules
@@ -25,7 +30,8 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
-      parser: '@typescript-eslint/parser',
+      parser: (await import('@typescript-eslint/parser')).default,
+
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
@@ -35,6 +41,8 @@ export default [
       import: (await import('eslint-plugin-import')).default,
       react: (await import('eslint-plugin-react')).default,
       'react-hooks': (await import('eslint-plugin-react-hooks')).default,
+      '@typescript-eslint': (await import('@typescript-eslint/eslint-plugin'))
+        .default,
     },
     rules: {
       '@typescript-eslint/explicit-module-boundary-types': 'error',
@@ -88,11 +96,19 @@ export default [
     },
   },
 
+  {
+    files: ['**/*.tsx'],
+    rules: {
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+    },
+  },
+
   // TypeScript override
   {
     files: ['./**/*.ts', './**/*.tsx'],
     languageOptions: {
-      parser: '@typescript-eslint/parser',
+      parser: (await import('@typescript-eslint/parser')).default,
+
       parserOptions: {
         project: './tsconfig.*?.json',
       },
@@ -102,7 +118,6 @@ export default [
         .default,
     },
     rules: {
-      '@typescript-eslint/indent': ['error', 2],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

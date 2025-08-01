@@ -1,6 +1,5 @@
 import CertificateCard from '@/components/ui/CertificateCard';
 import CERTIFICATE_CARD_CONSTANTS from '@/components/ui/CertificateCard/CertificateCard.constants';
-import { Card, CardBody } from '@heroui/react';
 import Image from 'next/image';
 
 const Certificates = () => {

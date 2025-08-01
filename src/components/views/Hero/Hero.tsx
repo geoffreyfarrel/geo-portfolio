@@ -7,7 +7,9 @@ import Link from 'next/link';
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement | null>(null);
+
   useHero(heroRef);
+
   return (
     <section
       ref={heroRef}

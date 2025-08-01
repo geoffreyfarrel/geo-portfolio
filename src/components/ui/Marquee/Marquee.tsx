@@ -3,6 +3,7 @@ import useMarquee from './useMarquee';
 
 const Marquee = () => {
   const marqueeRef = useRef<HTMLDivElement | null>(null);
+
   useMarquee(marqueeRef);
 
   return (

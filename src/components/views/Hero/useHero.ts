@@ -1,13 +1,13 @@
 import { useHeroDone } from '@/contexts/HeroContext';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import ScrambleTextPlugin from 'gsap/ScrambleTextPlugin';
+import gsap from 'gsap'; // eslint-disable-line import/no-named-as-default
+import ScrambleTextPlugin from 'gsap/ScrambleTextPlugin'; // eslint-disable-line import/no-named-as-default
 import { SplitText } from 'gsap/SplitText';
 import { RefObject } from 'react';
 
 gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
-const useHero = (ref: RefObject<HTMLElement | null>) => {
+const useHero = (ref: RefObject<HTMLElement | null>): void => {
   const { setDone } = useHeroDone();
 
   useGSAP(
@@ -63,6 +63,7 @@ const useHero = (ref: RefObject<HTMLElement | null>) => {
         display: 'inline',
         whiteSpace: 'normal',
       });
+
       gsap.set('.char', {
         display: 'inline',
       });

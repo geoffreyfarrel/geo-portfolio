@@ -21,7 +21,9 @@ const HeroProvider = ({ children }: { children: ReactNode }) => {
 
 const useHeroDone = () => {
   const ctx = useContext(HeroContext);
+
   if (!ctx) throw new Error('useHeroDone must be used within HeroProvider');
+
   return ctx;
 };
 

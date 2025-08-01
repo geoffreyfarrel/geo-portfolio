@@ -1,18 +1,20 @@
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import gsap from 'gsap'; // eslint-disable-line import/no-named-as-default
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { RefObject } from 'react';
 import { horizontalLoop } from '@/utils/gsap-horizontal-loop';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useMarquee = (ref: RefObject<HTMLDivElement | null>) => {
+const useMarquee = (ref: RefObject<HTMLDivElement | null>): void => {
   useGSAP(
     () => {
       const marquee = ref.current;
+
       if (!marquee) return;
 
       const items = marquee.querySelectorAll('.marquee-item');
+
       if (!items.length) return;
 
       const loop = horizontalLoop(items, {
@@ -29,6 +31,7 @@ const useMarquee = (ref: RefObject<HTMLDivElement | null>) => {
           const direction = self.direction === -1 ? -1 : 1;
           const boost = Math.min(Math.abs(self.getVelocity()), 3000) * 0.003;
           const baseSpeed = 1;
+
           loop.timeScale(direction * (baseSpeed + boost));
         },
       });

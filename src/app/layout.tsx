@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Imperial_Script, Inter } from 'next/font/google';
 import './globals.css';
 import { HeroProvider } from '@/contexts/HeroContext';
+import { ReactNode } from 'react';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

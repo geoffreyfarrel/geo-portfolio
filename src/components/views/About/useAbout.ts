@@ -1,11 +1,11 @@
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import gsap from 'gsap'; // eslint-disable-line import/no-named-as-default
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { RefObject } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useAbout = (ref: RefObject<HTMLElement | null>) => {
+const useAbout = (ref: RefObject<HTMLElement | null>): void => {
   useGSAP(
     () => {
       if (!ref.current) return;
@@ -38,6 +38,7 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
           },
         }
       );
+
       tl.fromTo(
         '.desc2',
         {
@@ -64,6 +65,7 @@ const useAbout = (ref: RefObject<HTMLElement | null>) => {
           },
         }
       );
+
       tl.fromTo(
         '.desc3',
         {

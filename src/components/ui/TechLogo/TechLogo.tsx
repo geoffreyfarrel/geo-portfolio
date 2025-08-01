@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import TECH_LOGO_ICON from './TechLogo.constants';
-import { cn } from '@/utils/cn';
 
 const TechLogo = () => {
   return (
