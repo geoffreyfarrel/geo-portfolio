@@ -28,6 +28,10 @@ section {
   height: 3rem;
 }
 
+.tech-logo {
+  @apply w-3/4 sm:w-full;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   @apply !hidden rounded-full bg-blue-900/65 p-10 font-bold text-white transition duration-300 hover:scale-125 md:!flex;

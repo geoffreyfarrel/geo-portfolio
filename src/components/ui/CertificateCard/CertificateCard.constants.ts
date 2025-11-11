@@ -23,6 +23,12 @@ const CERTIFICATE_CARD_CONSTANTS = [
     issuer: 'CodePolitan',
     image: '/certificates/tailwind.webp',
   },
+  {
+    id: 5,
+    title: 'ICSSE 2025 Best Presentation',
+    issuer: 'Taiwan Association of System Science and Engineering',
+    image: '/certificates/icsse-best-presentation.webp',
+  },
 ];
 
 export default CERTIFICATE_CARD_CONSTANTS;

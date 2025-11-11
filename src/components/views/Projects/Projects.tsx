@@ -10,7 +10,7 @@ const Projects = () => {
         </h1>
       </div>
       <div className="absolute top-20 left-13 z-10">
-        <h2 className="text-6xl font-extrabold tracking-wide text-white">
+        <h2 className="text-5xl font-extrabold tracking-wide text-white md:text-6xl">
           PROJECTS
         </h2>
       </div>
