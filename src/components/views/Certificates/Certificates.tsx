@@ -36,6 +36,7 @@ const Certificates = () => {
             title={certificate.title}
             image={certificate.image}
             issuer={certificate.issuer}
+            url={certificate.url}
           />
         ))}
       </div>

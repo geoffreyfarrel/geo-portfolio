@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PropTypes {
   title: string;
@@ -12,24 +13,49 @@ const CertificateCard = (props: PropTypes) => {
   const { title, image, issuer, url } = props;
 
   return (
-    <Card className="hover:scale-110">
-      <CardHeader className="flex justify-center">
-        <Image
-          src={image}
-          alt="profile"
-          width="1920"
-          height="1080"
-          className="rounded-xl"
-        />
-      </CardHeader>
-      <CardBody>
-        <h1 className="text-xl font-bold">{title}</h1>
-        <p className="font-light text-gray-500">
-          <strong className="font-medium">Issuer: </strong>
-          {issuer}
-        </p>
-      </CardBody>
-    </Card>
+    <>
+      {url ? (
+        <Link href={url} target="_blank" rel="noreferrer noopener">
+          <Card className="hover:scale-110">
+            <CardHeader className="flex justify-center">
+              <Image
+                src={image}
+                alt="profile"
+                width="1920"
+                height="1080"
+                className="rounded-xl"
+              />
+            </CardHeader>
+            <CardBody>
+              <h1 className="text-xl font-bold">{title}</h1>
+              <p className="font-light text-gray-500">
+                <strong className="font-medium">Issuer: </strong>
+                {issuer}
+              </p>
+            </CardBody>
+          </Card>
+        </Link>
+      ) : (
+        <Card className="hover:scale-110">
+          <CardHeader className="flex justify-center">
+            <Image
+              src={image}
+              alt="profile"
+              width="1920"
+              height="1080"
+              className="rounded-xl"
+            />
+          </CardHeader>
+          <CardBody>
+            <h1 className="text-xl font-bold">{title}</h1>
+            <p className="font-light text-gray-500">
+              <strong className="font-medium">Issuer: </strong>
+              {issuer}
+            </p>
+          </CardBody>
+        </Card>
+      )}
+    </>
   );
 };
 
